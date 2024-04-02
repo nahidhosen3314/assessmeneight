@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  body{
+      @apply text-paragraph font-primary;
+  }
+  h1,h2,h3,h4,h5,h6{
+      @apply font-bold text-heading font-secondary;
+  }
+  h1{
+      @apply text-5xl;
+  }
+  h2{
+      @apply text-4xl;
+  }
+  h3{
+      @apply text-3xl;
+  }
+  h4{
+      @apply text-2xl;
+  }
+  h5{
+      @apply text-xl;
+  }
+  h6{
+      @apply text-lg;
+  }
+  p{
+      @apply md:text-lg text-base leading-6 text-paragraph ;
+  }
+  input, textarea {
+      @apply w-full text-base py-4 px-4 rounded-xl outline-none focus-visible:outline-none bg-white;
+  }
+  a{
+      @apply inline-block;
+  }
+  label{
+      @apply w-full;
+  }
+  li{
+      @apply  md:text-lg text-base leading-6 text-paragraph cursor-pointer;
+  }
+}
+
+@layer components{
+  button{
+      @apply px-4 hover:shadow-lg transition-all bg-primary text-white py-2 rounded-lg text-lg font-semibold inline-block;
+  }
+  .btn{
+      @apply md:px-6 px-4 md:py-4 py-3 rounded-lg text-xl font-bold inline-block;
+  }
+  .btn-primary{
+      @apply text-white bg-primary hover:shadow-lg;
+  }
+  .btn-secondary{
+      @apply text-white bg-secondary;
+  }
+}
+
+.h-menu{
+    @apply flex flex-col absolute w-72 -right-72 top-full gap-3 bg-gray-50 shadow-lg p-5 z-20 duration-300;
+}
+.h-menu.active{
+    @apply right-0
+}
+@screen lg{
+    .h-menu{
+        @apply flex flex-wrap flex-row items-center gap-3 static w-auto bg-transparent shadow-none;
+    }
+}
